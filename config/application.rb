@@ -63,7 +63,7 @@ module SEEK
     config.exceptions_app = self.routes
 
     config.active_support.escape_html_entities_in_json = true
-
+    config.serve_static_assets = false
     #uncomment and set the value if running under a suburi or use RAILS_RELATIVE_URL_ROOT
     #config.relative_url_root = '/seek'
 

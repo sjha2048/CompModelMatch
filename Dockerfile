@@ -1,4 +1,4 @@
-FROM ruby:2.4
+FROM ruby:2.4-stretch
 
 MAINTAINER Stuart Owen <orcid.org/0000-0003-2130-0865>, Finn Bacall
 
@@ -66,6 +66,7 @@ RUN bundle exec rake assets:precompile && \
 #root access needed for next couple of steps
 USER root
 RUN chown -R www-data:www-data public/
+RUN chown -R www-data:www-data /seek4/tmp
 RUN chmod -R g+w public/
 
 # NGINX config
